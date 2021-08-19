@@ -41,7 +41,7 @@ get _ LNil = Nothing
 get 0 l = Just (head l)
 get i l
   | i < 0 = Nothing
-  | otherwise = get (i - 1) l
+  | otherwise = get (i - 1) (tail l)
 
 index :: (Eq a) => a -> LList a -> Int
 index a l = indexRec a l 0 where
